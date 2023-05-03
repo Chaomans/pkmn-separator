@@ -1,6 +1,10 @@
 export type DisplayableLine = {
-    index: number,
-    text: string,
-    fr?: string,
-    jp?: string
-}
+  index: number;
+  line: string;
+  toSeparate: Separation[];
+};
+
+export type Separation = {
+  start: number;
+  text: string;
+};
