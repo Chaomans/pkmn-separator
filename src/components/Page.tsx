@@ -45,6 +45,7 @@ export default function Page() {
     while ((match = separate.exec(line)) !== null) {
       separations.push({
         start: match.index,
+        end: match.index + match[0].length,
         text: match[0],
       });
     }

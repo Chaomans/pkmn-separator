@@ -6,5 +6,6 @@ export type DisplayableLine = {
 
 export type Separation = {
   start: number;
+  end: number;
   text: string;
 };

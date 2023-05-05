@@ -1,7 +1,43 @@
-.highlightJAP {
-  background-color: rgba(176, 127, 255, 0.815);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  border-style: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Poppins;
 }
 
-.highlightFR {
+.highlight {
+  cursor: pointer;
+}
+
+.highlight:hover {
+  border: 1px solid;
+}
+
+.highlight.JAP {
+  background-color: rgba(195, 158, 255, 0.815);
+}
+
+.highlight.FR {
   background-color: rgba(238, 255, 86, 0.815);
+}
+
+.line-number {
+  width: 3rem;
+}
+
+.highlight.editing {
+  background-color: #ffa844;
+  cursor: text;
+  font-weight: 600;
+  border: 1px solid;
+}
+
+li {
+  width: fit-content;
+}
+
+.displayableLine {
+  display: flex;
 }
