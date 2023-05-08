@@ -25,12 +25,13 @@ export default function Page() {
   };
 
   const prepareLines = (text: string) => {
-    const lines = text.split("\n");
+    const lines = text.split("\r\n");
     const preparedLines: DisplayableLine[] = [];
-    const separate = /^Dialogue: (?:[a-z0-9:.]*,){9}(?:{.+})*(.+)/i;
+    const separate =
+      /^Dialogue: (?:[a-zàâçéèêëîïôûùüÿñæœ0-9:.-_]*,){9}(?:{.+})?(.+)/i;
     lines.forEach((line, index) => {
       const match = line.match(separate);
-      if (line.includes("//") && match) {
+      if (line.includes(" // ") && match) {
         const text = match[1];
         const toSeparate = findVersion(text);
         preparedLines.push({
@@ -48,6 +49,7 @@ export default function Page() {
     const separations: Separation[] = [];
     let match;
     while ((match = separate.exec(line)) !== null) {
+      console.log(match);
       separations.push({
         start: match.index,
         end: match.index + match[0].length,
@@ -119,7 +121,7 @@ export default function Page() {
     }
     const element = document.createElement("a");
     const versionIndex: VersionIndex = { FR: 1, JAP: 0 };
-    const text = fileText.split("\n").map((line, index) => {
+    const text = fileText.split("\r\n").map((line, index) => {
       if (!line.includes(" // ")) return line;
       const toReplace = linesToSeparate.find((lts) => lts.index === index);
       if (!toReplace) return line;
@@ -134,7 +136,9 @@ export default function Page() {
         });
       return line.replace(toReplace.line, newLine);
     });
-    const file = new Blob(text, { type: "text/plain;charset=utf-8" });
+    const file = new Blob([text.join("\r\n")], {
+      type: "text/plain;charset=utf-8",
+    });
     element.href = URL.createObjectURL(file);
     element.download = version + ".ass";
     document.body.appendChild(element);
