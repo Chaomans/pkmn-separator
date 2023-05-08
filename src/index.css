@@ -30,7 +30,8 @@
 }
 
 .line-number {
-  width: 3rem;
+  min-width: 3.5rem;
+  margin-right: 1rem;
 }
 
 .highlight.editing {
