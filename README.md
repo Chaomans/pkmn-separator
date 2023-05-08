@@ -15,6 +15,7 @@ This app is a support for the separating step of the pokemon-fansub subtitle mak
 ## Example
 
 > It should be `Infirmière Joëlle`
+>
 > ![Correcting FR text](public/correcting_example.gif)
 
 ## Tips
