@@ -12,6 +12,11 @@ This app is a support for the separating step of the pokemon-fansub subtitle mak
 - Save your JAP / FR version using the dedicated button
 - Done
 
+## Example
+
+> It should be `Infirmière Joëlle`
+> ![Correcting FR text](public/correcting_example.gif)
+
 ## Tips
 
 - You can double click outside of the text lines to cancel a word selection
