@@ -28,7 +28,7 @@ export default function Page() {
     const lines = text.split("\r\n");
     const preparedLines: DisplayableLine[] = [];
     const separate =
-      /^Dialogue: (?:[a-zàâçéèêëîïôûùüÿñæœ0-9:.-_]*,){9}(?:{.+})?(.+)/i;
+      /^Dialogue: (?:[a-zàâçéèêëîïôûùüÿñæœ0-9:.\-_]*,){9}(?:{.+})?(.+)/i;
     lines.forEach((line, index) => {
       const match = line.match(separate);
       if (line.includes(" // ") && match) {
