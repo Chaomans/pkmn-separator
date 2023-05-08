@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
+:root {
+  --lavander: rgba(195, 158, 255, 0.815);
+  --yellow: rgba(238, 255, 86, 0.815);
+  --red: rgba(255, 23, 23, 0.836);
+}
+
 * {
   border-style: border-box;
   padding: 0;
@@ -16,11 +22,11 @@
 }
 
 .highlight.JAP {
-  background-color: rgba(195, 158, 255, 0.815);
+  background-color: var(--lavander);
 }
 
 .highlight.FR {
-  background-color: rgba(238, 255, 86, 0.815);
+  background-color: var(--yellow);
 }
 
 .line-number {
@@ -28,10 +34,30 @@
 }
 
 .highlight.editing {
-  background-color: #ffa844;
+  background-color: inherit;
   cursor: text;
   font-weight: 600;
-  border: 1px solid;
+  border: 2px solid var(--red);
+}
+
+.isEditingFR::selection,
+.highlight.FR::selection {
+  background-color: var(--yellow);
+}
+
+.isEditingFR::-moz-selection,
+.highlight.FR::-moz-selection {
+  background-color: var(--yellow);
+}
+
+.isEditingJAP::selection,
+.highlight.JAP::selection {
+  background-color: var(--lavander);
+}
+
+.isEditingJAP::-moz-selection,
+.highlight.JAP::-moz-selection {
+  background-color: var(--lavander);
 }
 
 li {
